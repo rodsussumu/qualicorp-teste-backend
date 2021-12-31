@@ -1,4 +1,4 @@
-interface ICostumer {
+interface ICustomer {
   nome: string;
   sobrenome: string;
   email: string;
@@ -10,4 +10,4 @@ interface ICostumer {
   complemento: string;
 }
 
-export default ICostumer;
+export default ICustomer;

@@ -1,9 +1,9 @@
 import AppError from '../../../shared/errors/AppError';
 import Customer from '../../../shared/mongodb/schema/CustomerSchema';
-import ICostumer from '../interfaces/InterfaceCostumer';
+import ICustomer from '../interfaces/InterfaceCustomer';
 
 class ListCostumerService {
-  public async execute(): Promise<ICostumer[]> {
+  public async execute(): Promise<ICustomer[]> {
     const customers = await Customer.find();
 
     return customers;

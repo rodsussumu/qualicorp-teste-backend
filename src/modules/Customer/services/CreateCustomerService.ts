@@ -1,6 +1,6 @@
 import AppError from '../../../shared/errors/AppError';
 import Customer from '../../../shared/mongodb/schema/CustomerSchema';
-import ICostumer from '../interfaces/InterfaceCostumer';
+import ICustomer from '../interfaces/InterfaceCustomer';
 
 class CreateCostumerService {
   public async execute({
@@ -13,7 +13,7 @@ class CreateCostumerService {
     endereco,
     numero,
     complemento,
-  }: ICostumer): Promise<ICostumer> {
+  }: ICustomer): Promise<ICustomer> {
     const customer = {
       nome,
       sobrenome,

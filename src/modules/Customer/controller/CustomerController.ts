@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import CreateCostumerService from '../services/CreateCustomerService';
+import DeleteCustomerService from '../services/DeleteCustomerService';
 import ListCostumerService from '../services/ListCustomerService';
+import UpdateCustomerService from '../services/UpdateCustomerService';
 
 export default class CustomerController {
   public async create(request: Request, response: Response) {
@@ -39,5 +41,52 @@ export default class CustomerController {
     const costumers = await listCostumers.execute();
 
     return response.json(costumers);
+  }
+
+  public async update(request: Request, response: Response) {
+    const {
+      nome,
+      sobrenome,
+      email,
+      telefone,
+      cpf,
+      cep,
+      endereco,
+      numero,
+      complemento,
+    } = request.body;
+
+    const { id } = request.params;
+
+    const updateCustomer = new UpdateCustomerService();
+
+    const customer = await updateCustomer.execute({
+      id,
+      nome,
+      sobrenome,
+      email,
+      telefone,
+      cpf,
+      cep,
+      endereco,
+      numero,
+      complemento,
+    });
+
+    return response.json(customer);
+  }
+
+  public async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const deleteCustomer = new DeleteCustomerService();
+
+    const customer = await deleteCustomer.execute({
+      id,
+    });
+
+    return response.json({
+      message: 'success',
+    });
   }
 }

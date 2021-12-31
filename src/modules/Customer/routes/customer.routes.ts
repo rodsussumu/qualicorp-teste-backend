@@ -6,5 +6,7 @@ const customerController = new CustomerController();
 
 customerRouter.post('/', customerController.create);
 customerRouter.get('/', customerController.list);
+customerRouter.put('/:id', customerController.update);
+customerRouter.delete('/:id', customerController.delete);
 
 export default customerRouter;
