@@ -40,9 +40,13 @@ class UpdateCustomerService {
       throw new AppError('Customer not exists');
     }
 
-    const customerExistsCpf = await Customer.findOne({ cpf: cpf });
+    const customerExistsCpf = await Customer.findOne({
+      cpf: cpf,
+    });
 
-    if (customerExistsCpf) {
+    console.log(customerExistsCpf.id);
+    console.log(id);
+    if (customerExistsCpf && customerExistsCpf.id !== id) {
       throw new AppError('CPF already exists');
     }
 
