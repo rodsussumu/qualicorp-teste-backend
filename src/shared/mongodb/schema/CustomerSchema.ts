@@ -31,6 +31,18 @@ const CustomerSchema = new Schema({
     type: String,
     required: [true],
   },
+  estado: {
+    type: String,
+    required: [true],
+  },
+  cidade: {
+    type: String,
+    required: [true],
+  },
+  bairro: {
+    type: String,
+    required: [true],
+  },
   numero: {
     type: String,
     required: [true],
@@ -41,6 +53,6 @@ const CustomerSchema = new Schema({
   },
 });
 
-const Customer = mongoose.model('Customer', CustomerSchema)
+const Customer = mongoose.model('Customer', CustomerSchema);
 
-export default Customer
+export default Customer;

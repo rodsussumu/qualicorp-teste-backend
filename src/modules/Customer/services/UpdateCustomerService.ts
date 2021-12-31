@@ -10,6 +10,9 @@ interface IRequest {
   telefone: string;
   cpf: string;
   cep: string;
+  estado: string;
+  cidade: string;
+  bairro: string;
   endereco: string;
   numero: string;
   complemento: string;
@@ -24,6 +27,9 @@ class UpdateCustomerService {
     telefone,
     cpf,
     cep,
+    estado,
+    cidade,
+    bairro,
     endereco,
     numero,
     complemento,
@@ -47,6 +53,9 @@ class UpdateCustomerService {
       telefone,
       cpf,
       cep,
+      estado,
+      cidade,
+      bairro,
       endereco,
       numero,
       complemento,
