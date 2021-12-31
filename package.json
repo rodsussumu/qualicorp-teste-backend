@@ -6,7 +6,8 @@
   "author": "Rodrigo <rodsussumu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+    "start": "node build/shared/http/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
