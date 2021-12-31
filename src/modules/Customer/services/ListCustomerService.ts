@@ -1,4 +1,3 @@
-import AppError from '../../../shared/errors/AppError';
 import Customer from '../../../shared/mongodb/schema/CustomerSchema';
 import ICustomer from '../interfaces/InterfaceCustomer';
 

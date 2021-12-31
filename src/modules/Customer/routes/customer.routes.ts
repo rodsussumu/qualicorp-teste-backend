@@ -8,5 +8,6 @@ customerRouter.post('/', customerController.create);
 customerRouter.get('/', customerController.list);
 customerRouter.put('/:id', customerController.update);
 customerRouter.delete('/:id', customerController.delete);
+customerRouter.get('/:id', customerController.listById);
 
 export default customerRouter;

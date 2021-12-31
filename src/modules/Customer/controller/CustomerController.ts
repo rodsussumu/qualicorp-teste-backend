@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import CreateCostumerService from '../services/CreateCustomerService';
 import DeleteCustomerService from '../services/DeleteCustomerService';
+import ListByIdCostumerService from '../services/ListByIdCustomerService';
 import ListCostumerService from '../services/ListCustomerService';
 import UpdateCustomerService from '../services/UpdateCustomerService';
 
@@ -100,5 +101,17 @@ export default class CustomerController {
     return response.json({
       message: 'success',
     });
+  }
+
+  public async listById(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const listCostumer = new ListByIdCostumerService();
+
+    const costumer = await listCostumer.execute({
+      id,
+    });
+
+    return response.json(costumer);
   }
 }
