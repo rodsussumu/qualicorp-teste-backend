@@ -7,7 +7,7 @@ interface IRequest {
 
 class ListByIdCostumerService {
   public async execute({ id }: IRequest): Promise<ICustomer[]> {
-    const customer = await Customer.findOne({ id: id });
+    const customer = await Customer.findOne({ _id: id });
 
     return customer;
   }

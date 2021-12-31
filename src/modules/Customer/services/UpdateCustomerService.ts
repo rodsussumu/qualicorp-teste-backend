@@ -34,7 +34,7 @@ class UpdateCustomerService {
     numero,
     complemento,
   }: IRequest): Promise<ICustomer> {
-    const customerExists = await Customer.findOne({ id: id });
+    const customerExists = await Customer.findOne({ _id: id });
 
     if (!customerExists) {
       throw new AppError('Customer not exists');
@@ -44,8 +44,6 @@ class UpdateCustomerService {
       cpf: cpf,
     });
 
-    console.log(customerExistsCpf.id);
-    console.log(id);
     if (customerExistsCpf && customerExistsCpf.id !== id) {
       throw new AppError('CPF already exists');
     }
