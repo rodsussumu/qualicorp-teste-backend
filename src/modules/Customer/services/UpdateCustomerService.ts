@@ -37,7 +37,7 @@ class UpdateCustomerService {
     const customerExists = await Customer.findOne({ _id: id });
 
     if (!customerExists) {
-      throw new AppError('Customer not exists');
+      throw new AppError('Cliente não cadastrado');
     }
 
     const customerExistsCpf = await Customer.findOne({
@@ -45,7 +45,7 @@ class UpdateCustomerService {
     });
 
     if (customerExistsCpf && customerExistsCpf.id !== id) {
-      throw new AppError('CPF already exists');
+      throw new AppError('CPF já cadastrado');
     }
 
     const customerData = {

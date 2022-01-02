@@ -35,7 +35,7 @@ class CreateCostumerService {
     const cpfExists = await Customer.findOne({ cpf: cpf });
 
     if (cpfExists) {
-      throw new AppError('Already exists');
+      throw new AppError('CPF já cadastrado');
     }
 
     const customerToDb = new Customer(customer);
