@@ -8,7 +8,7 @@ interface IRequest {
 
 class DeleteCustomerService {
   public async execute({ id }: IRequest): Promise<void> {
-    const customerExists = await Customer.findOne({ _id: id });
+    const customerExists = await Customer.findOne({ id: id });
 
     if (!customerExists) {
       throw new AppError('Customer not exists');
