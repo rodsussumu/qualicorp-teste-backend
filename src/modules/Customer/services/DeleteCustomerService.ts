@@ -11,7 +11,7 @@ class DeleteCustomerService {
     const customerExists = await Customer.findOne({ id: id });
 
     if (!customerExists) {
-      throw new AppError('Customer not exists');
+      throw new AppError('Cliente não encontrado');
     }
 
     const filter = { _id: id };
