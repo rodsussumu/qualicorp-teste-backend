@@ -78,6 +78,7 @@ Response:
 		"__v": 0
 	}
 ]
+```
 
 ## 3. Atualizando cliente
 Atualiza os dados de um cliente existente pelo id
