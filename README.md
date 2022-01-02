@@ -30,7 +30,7 @@ MONGODB_URL=''
 ## Executando projeto
 
 ```
-npm start
+npm dev
 ```
 
 # Routes
