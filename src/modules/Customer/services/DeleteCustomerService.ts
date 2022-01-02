@@ -14,7 +14,7 @@ class DeleteCustomerService {
       throw new AppError('Customer not exists');
     }
 
-    const filter = { id: id };
+    const filter = { _id: id };
 
     await Customer.findOneAndRemove(filter);
   }

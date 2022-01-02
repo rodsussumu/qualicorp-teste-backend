@@ -63,7 +63,7 @@ class UpdateCustomerService {
       complemento,
     };
 
-    const filter = { id: id };
+    const filter = { _id: id };
 
     const customerToDb = await Customer.findOneAndUpdate(filter, customerData);
     customerToDb.save();
